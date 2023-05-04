@@ -25,7 +25,7 @@ $items = [$crocchette,$lettiera,$pallina];
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <h1 class="text-center">Animals Paradise</h1>
     <div class="container d-flex gap-2 justify-content-center mt-5" >
 
     <?php
@@ -38,19 +38,19 @@ $items = [$crocchette,$lettiera,$pallina];
                 <h5 class="card-title"><?= $item->name?></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Prezzo: <?= $item->price?> &#x20AC</li>
-                <li class="list-group-item">Specie Animale: <?= $item->species?>
+                <li class="list-group-item"><strong>Prezzo:</strong> <?= $item->price?> &#x20AC</li>
+                <li class="list-group-item"><strong>Specie Animale:</strong> <?= $item->species?>
                 <?php  if($item->getClassName($item)== 'Food'){
                 ?>
-                <li class="list-group-item">Ingredienti: <? echo $item->getStringOfArray($item->Ingredients) ?></li>
+                <li class="list-group-item"><strong>Ingredienti:</strong> <? echo $item->getStringOfArray($item->Ingredients) ?></li>
                 <?php
-                }  
-                 
+                }      
                 ?>
-            </li>
-        </ul>
+                </li>
+                <li class="list-group-item"><strong>Tipo Prodotto:</strong> <?= $item->getClassName($item)  ?></li>
+            </ul>
         
-    </div>
+        </div>
     <?php
 
     }
