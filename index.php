@@ -5,10 +5,6 @@ require_once './Models/Toy.php';
 require_once './Models/Kennel.php';
 require_once './db.php';
 
-// istanzio un array con gli oggetti all'interno
-$items = [$crocchette,$lettiera,$pallina];
-
-
 
 ?>
 
@@ -26,7 +22,7 @@ $items = [$crocchette,$lettiera,$pallina];
 </head>
 <body>
     <h1 class="text-center">Animals Paradise</h1>
-    <div class="container d-flex gap-2 justify-content-center mt-5" >
+    <div class="container d-flex gap-2 flex-wrap justify-content-center mt-5 mb-5" >
 
     <?php
     foreach($items as $item){
