@@ -8,7 +8,7 @@ require_once './db.php';
 // istanzio un array con gli oggetti all'interno
 $items = [$crocchette,$lettiera,$pallina];
 
-var_dump($items);
+
 
 ?>
 
@@ -20,26 +20,33 @@ var_dump($items);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container d-flex" >
+    <div class="container d-flex gap-2 justify-content-center mt-5" >
 
     <?php
     foreach($items as $item){
 
         ?>
-        <div class="card" style="width: 18rem;">
-            <img src=" <?= $item->image ?> " class="card-img-top" alt="...">
+        <div class="card overflow-hidden" style="width: 18rem;">
+            <img src=" <?= $item->image ?>">
             <div class="card-body">
                 <h5 class="card-title"><?= $item->name?></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Prezzo: <?= $item->price?></li>
-                <li class="list-group-item">Specie Animale: <?= $item->species?> 
+                <li class="list-group-item">Prezzo: <?= $item->price?> &#x20AC</li>
+                <li class="list-group-item">Specie Animale: <?= $item->species?>
+                <?php  if($item->getClassName($item)== 'Food'){
+                ?>
+                <li class="list-group-item">Ingredienti: <? echo $item->getStringOfArray($item->Ingredients) ?></li>
+                <?php
+                }  
+                 
+                ?>
             </li>
         </ul>
         

@@ -15,4 +15,8 @@ class Food extends Product{
 
     }
 
+    public function getStringOfArray($array){
+         return implode(" - ", $array);
+    }
+
 }
