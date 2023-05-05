@@ -36,14 +36,14 @@ require_once './db.php';
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>Prezzo:</strong> <?= $item->price?> &#x20AC</li>
                 <li class="list-group-item"><strong>Specie Animale:</strong> <?= $item->species->image?>
-                <?php  if($item->getClassName($item)== 'Food'){
+                <?php  if(get_class($item)== 'Food'){
                 ?>
                 <li class="list-group-item"><strong>Ingredienti:</strong> <? echo $item->getStringOfArray($item->Ingredients) ?></li>
                 <?php
                 }      
                 ?>
                 </li>
-                <li class="list-group-item"><strong>Tipo Prodotto:</strong> <?= $item->getClassName($item)  ?></li>
+                <li class="list-group-item"><strong>Tipo Prodotto:</strong> <?= get_class($item)  ?></li>
             </ul>
         
         </div>
