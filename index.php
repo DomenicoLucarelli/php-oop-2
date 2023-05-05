@@ -34,7 +34,14 @@ require_once './db.php';
                 <h5 class="card-title"><?= $item->name?></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Prezzo:</strong> <?= $item->price?> &#x20AC</li>
+                <li class="list-group-item"><strong>Prezzo:</strong> <? 
+                try {
+                    echo $item->checkPrice();
+                } catch (Exception $e) {
+                    echo $e->getMessage();
+                }
+                
+                ?> &#x20AC</li>
                 <li class="list-group-item"><strong>Specie Animale:</strong> <?= $item->species->image?>
                 <?php  if(get_class($item)== 'Food'){
                 ?>

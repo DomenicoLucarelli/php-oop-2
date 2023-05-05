@@ -14,15 +14,15 @@ class Product{
         $this->species = $species;
         $this->image = $image;
 
-       
+        
     }
+    public function checkPrice(){
 
-    // funzione che mi restituisce il nome della classe dell'oggetto 
-    public function getClassName($object){
-        return get_class($object);
+        if($this->price <= 0){
+
+            throw new Exception('Il prezzo deve essere maggiore di 0');
+        }else{
+            return $this->price;
+        }
     }
-
-    
-   
-
 }
