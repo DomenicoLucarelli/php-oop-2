@@ -6,7 +6,7 @@ class Food extends Product{
     public $weight;
     
 
-    function __construct(string $name, float $price, string $species, string $image,array $Ingredients, int $weight){
+    function __construct(string $name, float $price, Species $species, string $image,array $Ingredients, int $weight){
 
         parent::__construct($name,$price,$species,$image);
 

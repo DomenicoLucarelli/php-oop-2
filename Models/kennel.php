@@ -6,7 +6,7 @@ class Kennel extends Product{
     public $material;
     
 
-    function __construct(string $name, float $price, string $species, string $image,string $size, string $material){
+    function __construct(string $name, float $price, Species $species, string $image,string $size, string $material){
 
         parent::__construct($name,$price,$species,$image);
 

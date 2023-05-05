@@ -35,7 +35,7 @@ require_once './db.php';
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>Prezzo:</strong> <?= $item->price?> &#x20AC</li>
-                <li class="list-group-item"><strong>Specie Animale:</strong> <?= $item->species?>
+                <li class="list-group-item"><strong>Specie Animale:</strong> <?= $item->species->image?>
                 <?php  if($item->getClassName($item)== 'Food'){
                 ?>
                 <li class="list-group-item"><strong>Ingredienti:</strong> <? echo $item->getStringOfArray($item->Ingredients) ?></li>
